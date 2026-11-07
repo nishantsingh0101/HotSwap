@@ -1,0 +1,3 @@
+DATE_FORMAT = "%Y-%m-%d"
+CURRENCY = "INR"
+EXPORT_DEBUG = True

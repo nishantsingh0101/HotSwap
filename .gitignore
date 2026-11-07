@@ -1,0 +1,15 @@
+.env
+deploy/.env
+.hotswap/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+web/node_modules/
+web/dist/
+.video-venv/
+demo-output/private/
+demo-output/work/
+project-idea.md
+idea-review.md
+idea-review-v2.md

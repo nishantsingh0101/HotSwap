@@ -1,0 +1,8 @@
+[
+  {"id": "INV-0001", "customer": "Acme Foods", "date": "2026-09-30", "amount": 900.0, "status": "paid"},
+  {"id": "INV-0002", "customer": "Blue Harbor", "date": "2026-10-01", "amount": 1250.5, "status": "open"},
+  {"id": "INV-0003", "customer": "Cedar Labs", "date": "2026-10-15", "amount": 480.0, "status": "paid"},
+  {"id": "INV-0004", "customer": "Acme Foods", "date": "2026-10-31", "amount": 2200.0, "status": "open"},
+  {"id": "INV-0005", "customer": "Delta Print", "date": "2026-11-01", "amount": 75.25, "status": "paid"},
+  {"id": "INV-0006", "customer": "Blue Harbor", "date": "2026-10-09", "amount": 333.333, "status": "paid"}
+]

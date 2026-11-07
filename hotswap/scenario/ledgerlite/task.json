@@ -1,0 +1,26 @@
+{
+  "id": "csv-export",
+  "title": "CSV export with date filters",
+  "request": "Add an `export` command to ledgerlite that prints invoices as CSV. It must support --from and --to dates (YYYY-MM-DD, both inclusive) and an optional --status filter (open or paid). Rows are sorted by date, then id. Amounts always have two decimals. The CSV starts with the header id,customer,date,amount,status. An invalid date prints a clear error and exits with code 2. If nothing matches, print only the header. Document the command in the README.",
+  "acceptance": [
+    "Date range is inclusive at both ends",
+    "Status filter keeps only matching invoices",
+    "Rows are sorted by date, then id",
+    "Header is id,customer,date,amount,status",
+    "Amounts are printed with exactly two decimals",
+    "python -m ledger export prints CSV to stdout",
+    "Invalid dates exit with code 2 and a clear message",
+    "An empty result prints only the header",
+    "The README documents the export command"
+  ],
+  "plan": [
+    {"step": 1, "title": "Add date range and status filtering", "files": ["ledger/filters.py"]},
+    {"step": 2, "title": "Add the CSV writer", "files": ["ledger/export.py"]},
+    {"step": 3, "title": "Wire the export command into the CLI", "files": ["ledger/cli.py"]},
+    {"step": 4, "title": "Handle invalid dates and empty results", "files": ["ledger/cli.py", "ledger/filters.py"]},
+    {"step": 5, "title": "Document the export command", "files": ["README.md"]}
+  ],
+  "pr_after_step": 2,
+  "public_names": ["filter_invoices", "parse_day", "to_csv", "cmd_export", "HEADER"],
+  "demo_command": ["python", "-m", "ledger", "export", "--from", "2026-10-01", "--to", "2026-10-31"]
+}

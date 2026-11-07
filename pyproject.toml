@@ -1,0 +1,34 @@
+[project]
+name = "hotswap"
+version = "0.1.0"
+description = "Recovery for agent teams in Switch rooms: the work survives when the agent does not."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.32.1",
+    "httpx==0.28.1",
+    "websockets==14.1",
+    "python-dotenv==1.0.1",
+    "typer==0.15.1",
+    "click==8.1.8",
+    "sse-starlette==2.2.1",
+    "pytest==8.3.4",
+]
+
+[project.scripts]
+hotswap = "hotswap.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["hotswap*"]
+
+[tool.setuptools.package-data]
+hotswap = ["scenario/**/*", "console/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
